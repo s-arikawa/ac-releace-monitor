@@ -20,7 +20,8 @@ export const useCronService = () => {
    * - 現時点で最新のファイル（latest.html）を1つ前のファイル（before-latest.html）としてリネームする
    * - Apple Configuration のサイトから HTML をダウンロードして latest.html として保存する
    * - latest.html と before-latest.html を比較する
-   * - latest.html と before-latest.html に差分があった場合は チャットに通知を飛ばす
+   * - 差分がある場合は Apple Configurator 2 のリリースノートのページをスクレイピングして、最新情報を取得
+   * - 最新情報をチャットに通知する
    *
    * 上記の処理に async/await を使わずに _sleep でお茶を濁しているのは手抜きです。
    */

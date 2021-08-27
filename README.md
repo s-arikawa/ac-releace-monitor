@@ -20,9 +20,25 @@ $ npm run dev
 
 - Node
 - Express
-- Playwright
+- [Playwright](https://github.com/microsoft/playwright)
 - jsdiff
 - cron
+
+### やっていること
+
+`src/cronService.ts` で以下の処理を定期実行しています。
+
+1. 1つ前のファイル（before-latest.html）を削除
+2. 現時点で最新のファイル（latest.html）を1つ前のファイル（before-latest.html）としてリネームする
+3. Apple Configuration のサイトから HTML をダウンロードして latest.html として保存する
+4. latest.html と before-latest.html を比較する 
+5. 差分がある場合は Apple Configurator 2 のリリースノートのページをスクレイピングして、最新情報を取得
+
+以下の機能が未実装です。
+
+- 最新情報をチャットに通知する
+
+### ディレクトリ構造と内容
 
 ```
 $ tree -r            
